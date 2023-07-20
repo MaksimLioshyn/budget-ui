@@ -1,0 +1,17 @@
+.cell {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cellName {
+	color: rgb(103, 101, 104);
+	font-style: italic;
+	margin-bottom: 10px;
+}
+
+.cellValue {
+	font-weight: 700;
+	font-size: 20px;
+}
