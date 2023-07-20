@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/34aff902-3570-4bd8-94bc-da55fdc851c8/resourceGroups/NetworkWatcherRG/providers/Microsoft.Web/sites/Budget-UI",
+    "appService.deploySubpath": "."
+}
