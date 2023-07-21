@@ -52,5 +52,5 @@ jobs:
         with:
           app-name: 'Budget-UI'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_D818625E44AE42048F4B28D90B7B4D35 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_BB241D144E5840D8BD993D8F526692A1 }}
           package: .
