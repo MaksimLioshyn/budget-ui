@@ -1,5 +1,5 @@
-import TableCell from "../TableCell/TableCell";
-import styles from "./TableRow.module.scss";
+import TableCell from '../TableCell/TableCell';
+import styles from './TableRow.module.scss';
 
 type TRowProps = {
   rowData: ReadonlyArray<[string, string]>;
