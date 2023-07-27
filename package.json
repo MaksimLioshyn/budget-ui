@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "start": "next start",    
+    "lint": "eslint .",
+    "lint-fix": "eslint . --fix",
     "format": "prettier --write \"**/*.scss\" \"**/*.ts\" \"**/*.tsx\"",
     "format-check": "prettier --check \"**/*.scss\" \"**/*.ts\" \"**/*.tsx\""
   },
