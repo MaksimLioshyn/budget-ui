@@ -1,4 +1,4 @@
-import styles from "./TableCell.module.scss";
+import styles from './TableCell.module.scss';
 
 type TCellProps = {
   cellName: string;

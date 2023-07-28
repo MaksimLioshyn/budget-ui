@@ -1,7 +1,7 @@
-import TableRow from "./components/TableRow/TableRow";
-import { ENDPOINT_URLS } from "./libs/constants/endpointUrls";
-import getData from "./libs/getData";
-import styles from "./page.module.scss";
+import TableRow from './components/TableRow/TableRow';
+import { ENDPOINT_URLS } from './libs/constants/endpointUrls';
+import getData from './libs/getData';
+import styles from './page.module.scss';
 
 type RuleType = {
   id: string;
