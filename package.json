@@ -5,11 +5,14 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",    
+    "start": "next start",
     "lint": "eslint .",
     "lint-fix": "eslint . --fix",
     "format": "prettier --write \"**/*.scss\" \"**/*.ts\" \"**/*.tsx\"",
-    "format-check": "prettier --check \"**/*.scss\" \"**/*.ts\" \"**/*.tsx\""
+    "format-check": "prettier --check \"**/*.scss\" \"**/*.ts\" \"**/*.tsx\"",
+    "lint:css": "stylelint \"**/*.css\" \"**/*.scss\"",
+    "lint:css:fix": "stylelint --fix \"**/*.css\" \"**/*.scss\"",
+    "prepare": "husky install"
   },
   "husky": {
     "hooks": {
@@ -18,19 +21,12 @@
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
-      "eslint --fix",
-      "git add"
+      "prettier --write",
+      "eslint --fix"
     ],
     "*.{scss}": [
       "prettier --write",
-      "git add"
-    ]
-  },
-  "eslintConfig": {
-    "extends": [
-      "next",
-      "next/core-web-vitals",
-      "plugin:prettier/recommended"
+      "stylelint --fix"
     ]
   },
   "dependencies": {
@@ -50,6 +46,9 @@
     "husky": "^8.0.3",
     "lint-staged": "^13.2.3",
     "prettier": "^3.0.0",
-    "sass": "^1.64.0"
+    "sass": "^1.64.0",
+    "stylelint": "^15.10.2",
+    "stylelint-config-standard": "^34.0.0",
+    "stylelint-prettier": "^4.0.2"
   }
 }
