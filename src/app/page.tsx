@@ -17,7 +17,7 @@ export default async function Home() {
   const { result }: TRuleTypes = await getData(ENDPOINT_URLS.RULE_TYPES);
 
   return (
-    <main className={styles.main}>
+    <div className={styles.wrapper}>
       <h1>Home page</h1>
       <h2>Table for RuleTypes EndPoint</h2>
       {result.map((ruleType) => {
@@ -25,6 +25,6 @@ export default async function Home() {
 
         return <TableRow key={ruleType.id} rowData={rowData} />;
       })}
-    </main>
+    </div>
   );
 }

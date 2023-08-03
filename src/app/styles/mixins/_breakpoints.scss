@@ -1,0 +1,19 @@
+$screen-sm-min: 600px;
+$screen-md-min: 900px;
+$screen-lg-min: 1200px;
+
+@mixin breakpoint($media) {
+  @if $media == sm {
+    @media screen and (min-width: 600px) {
+      @content;
+    }
+  } @else if $media == md {
+    @media screen and (min-width: 900px) {
+      @content;
+    }
+  } @else if $media == lg {
+    @media screen and (min-width: 1200px) {
+      @content;
+    }
+  }
+}
