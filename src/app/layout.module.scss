@@ -1,0 +1,9 @@
+@use "./styles/mixins/breakpoints" as *;
+
+.main {
+  padding-left: 0;
+
+  @include breakpoint(lg) {
+    padding-left: 320px;
+  }
+}

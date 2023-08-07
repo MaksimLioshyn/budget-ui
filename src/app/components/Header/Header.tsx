@@ -1,19 +1,25 @@
 import styles from './Header.module.scss';
+import { SideMenu, TSideMenuProps } from './SideMenu/SideMenu';
+import { TTopMenuProps, TopMenu } from './TopMenu/TopMenu';
 
 type THeaderProps = {
-  userName: string;
+  topMenuProps: TTopMenuProps;
+  sideMenuProps: TSideMenuProps;
 };
 
-const PROJECT_NAME = 'Project Balance';
-
-const Header = ({ userName }: THeaderProps) => {
+const Header = ({
+  topMenuProps: { userName, clichHandler },
+  sideMenuProps: { isMenuShowed, hideMenuHandler, curentRoute, routesList },
+}: THeaderProps) => {
   return (
     <header className={styles.wrapper}>
-      <div className={styles.siteName}>{PROJECT_NAME}</div>
-      <div className={styles.userBlock}>
-        <div className={styles.userAvatar}></div>
-        <div className={styles.userName}>{userName}</div>
-      </div>
+      <TopMenu userName={userName} clichHandler={clichHandler} />
+      <SideMenu
+        isMenuShowed={isMenuShowed}
+        hideMenuHandler={hideMenuHandler}
+        curentRoute={curentRoute}
+        routesList={routesList}
+      />
     </header>
   );
 };
