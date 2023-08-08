@@ -55,7 +55,7 @@ stages:
     - task: AzureRmWebAppDeployment@4
       inputs:
         ConnectionType: 'AzureRM'
-        azureSubscription: 'Visual Studio Professional Subscription (34aff902-3570-4bd8-94bc-da55fdc851c8)'
+        azureSubscription: $(azureSubscription)
         appType: 'webAppLinux'
         WebAppName: 'Budget-UI'
         packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
