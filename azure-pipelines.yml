@@ -38,7 +38,6 @@ stages:
     - script: |
         npm install
         npm run build --if-present
-#       npm run test --if-present
       displayName: 'npm install, build and test'
 
     - task: ArchiveFiles@2
@@ -50,5 +49,14 @@ stages:
         archiveFile: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
         replaceExistingArchive: true
 
-    - upload: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
+    - publish: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
       artifact: drop
+
+    - task: AzureRmWebAppDeployment@4
+      inputs:
+        ConnectionType: 'AzureRM'
+        azureSubscription: 'Visual Studio Professional Subscription (34aff902-3570-4bd8-94bc-da55fdc851c8)'
+        appType: 'webAppLinux'
+        WebAppName: 'Budget-UI'
+        packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
+        RuntimeStack: 'NODE|18-lts'
