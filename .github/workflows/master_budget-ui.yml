@@ -57,6 +57,5 @@ jobs:
         uses: azure/webapps-deploy@v2
         with:
           app-name: 'Budget-UI'
-          slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_8E39AF9C78D7465AAD483F1FFF004F12 }}
           package: .
