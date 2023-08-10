@@ -11,7 +11,7 @@ const TableRow = ({ rowData }: TRowProps) => {
       {rowData.map((cell) => {
         const [key, value] = cell;
 
-        return <TableCell key={key} cellName={key} cellValue={value} />;
+        return <TableCell key={key} cellValue={value} />;
       })}
     </div>
   );
