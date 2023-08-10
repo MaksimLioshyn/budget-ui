@@ -1,0 +1,13 @@
+.header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  min-width: fit-content;
+  width: auto;
+  display: grid;
+  grid-template-columns: repeat(6, minmax(250px, 1fr));
+  padding: 20px 10px;
+  background-color: #f9fafc;
+  border-bottom: 1px solid #e9edf5;
+  text-transform: uppercase;
+}
