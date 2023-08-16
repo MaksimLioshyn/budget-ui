@@ -4,12 +4,10 @@ type TCellProps = {
   cellValue: string;
 };
 
-const TableCell = ({ cellValue }: TCellProps) => {
+export const TableCell = ({ cellValue }: TCellProps) => {
   return (
     <div className={styles.cell}>
       <div className={styles.cellValue}>{cellValue}</div>
     </div>
   );
 };
-
-export default TableCell;

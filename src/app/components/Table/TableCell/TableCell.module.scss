@@ -3,15 +3,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-}
 
-.cellName {
-  color: rgb(103, 101, 104);
-  font-style: italic;
-  margin-bottom: 10px;
-}
-
-.cellValue {
-  font-weight: 700;
-  font-size: 20px;
+  &:first-child {
+    font-weight: 700;
+  }
 }
