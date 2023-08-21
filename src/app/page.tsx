@@ -1,4 +1,4 @@
-import Table from './containers/Table/Table';
+import { Table } from './containers/Table/Table';
 import styles from './page.module.scss';
 
 export default function Home() {

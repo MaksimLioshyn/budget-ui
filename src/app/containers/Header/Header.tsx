@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Header as HeaderView } from '../../components';
+import { Header as HeaderView } from '@/app/components/Header/Header';
 import { MOCK_DATA } from '../../libs/constants/mockData';
 import { usePathname } from 'next/navigation';
 import { ReplacePath } from '@/app/libs/helpers/navigationHandlers';
@@ -11,7 +11,7 @@ const getRoutes = (routes: { [key: string]: string }) => {
   return Object.entries(routes);
 };
 
-const Header = () => {
+export const Header = () => {
   const [isMenuShowed, setIsMenuShowed] = useState(false);
   const pathName = usePathname();
 
@@ -34,5 +34,3 @@ const Header = () => {
     />
   );
 };
-
-export default Header;

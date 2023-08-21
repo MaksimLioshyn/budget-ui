@@ -7,7 +7,7 @@ type THeaderProps = {
   sideMenuProps: TSideMenuProps;
 };
 
-const Header = ({
+export const Header = ({
   topMenuProps: { userName, clichHandler },
   sideMenuProps: { isMenuShowed, hideMenuHandler, curentRoute, routesList },
 }: THeaderProps) => {
@@ -23,5 +23,3 @@ const Header = ({
     </header>
   );
 };
-
-export default Header;
