@@ -3,12 +3,35 @@ import { TableCell } from '../TableCell/TableCell';
 import styles from './TableRow.module.scss';
 
 type TRowProps = {
-  rowData: ReadonlyArray<[string, string]>;
+  rowData: {
+    [key: string]: string;
+  };
   columnsCount: number;
   isHeader?: boolean;
+  isEditable?: boolean;
+  // eslint-disable-next-line no-unused-vars
+  buttonHandler?: (input: { [key: string]: string }) => void;
 };
 
-export const TableRow = ({ rowData, columnsCount, isHeader }: TRowProps) => {
+const renderRow = (balanceData: { [key: string]: string }) => {
+  const rowData = Object.entries(balanceData);
+  return (
+    <>
+      {rowData.map((cell) => {
+        const [key, value] = cell;
+        return <TableCell key={key} cellValue={value} />;
+      })}
+    </>
+  );
+};
+
+export const TableRow = ({
+  rowData,
+  columnsCount,
+  isHeader,
+  isEditable,
+  buttonHandler,
+}: TRowProps) => {
   const rowStyles = {
     '--columns-count': `${columnsCount}`,
   } as CSSProperties;
@@ -18,11 +41,12 @@ export const TableRow = ({ rowData, columnsCount, isHeader }: TRowProps) => {
       className={`${styles.row} ${isHeader ? styles.headerRow : ''}`}
       style={rowStyles}
     >
-      {rowData.map((cell) => {
-        const [key, value] = cell;
-
-        return <TableCell key={key} cellValue={value} />;
-      })}
+      {renderRow(rowData)}
+      {isEditable && (
+        <button onClick={() => buttonHandler && buttonHandler(rowData)}>
+          Edit
+        </button>
+      )}
     </div>
   );
 };
