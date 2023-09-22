@@ -4,10 +4,10 @@ import { formatNumberWithSpaces } from '@/app/libs/helpers/formatNumberData';
 import getData from '@/app/libs/helpers/getData';
 import { TTurnoverBalancesSheet } from '@/app/libs/types/response';
 
-const cellNames: ReadonlyArray<[string, string]> = [
-  ['', 'статья баланса'],
-  ['', 'значение'],
-];
+const cellNames = {
+  '1': 'статья баланса',
+  '2': 'значение',
+};
 
 const getGroupedData = (input: Array<TTurnoverBalancesSheet>) => {
   const groupedInput = input.reduce(
@@ -28,7 +28,7 @@ const getGroupedData = (input: Array<TTurnoverBalancesSheet>) => {
 };
 
 export const Table = async () => {
-  const columnCount = cellNames.length;
+  const columnCount = Object.keys(cellNames).length;
 
   const { result }: { result: Array<TTurnoverBalancesSheet> } = await getData(
     ENDPOINT_URLS.TURNOVER_SHEET

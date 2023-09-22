@@ -3,22 +3,31 @@ import styles from './Table.module.scss';
 
 export type TTableProps = {
   data: ReadonlyArray<{ [key: string]: string }>;
-  cellNames: ReadonlyArray<[string, string]>;
+  cellNames: { [key: string]: string };
   columnsCount: number;
+  isEditable?: boolean;
+  // eslint-disable-next-line no-unused-vars
+  buttonHandler?: (input: { [key: string]: string }) => void;
 };
 
-export const Table = ({ data, cellNames, columnsCount }: TTableProps) => {
+export const Table = ({
+  data,
+  cellNames,
+  columnsCount,
+  isEditable,
+  buttonHandler,
+}: TTableProps) => {
   return (
     <div className={styles.wrapper}>
       <TableRow isHeader rowData={cellNames} columnsCount={columnsCount} />
       {data.map((balanceData) => {
-        const rowData = Object.entries(balanceData);
-
         return (
           <TableRow
             key={balanceData.name}
-            rowData={rowData}
+            rowData={balanceData}
             columnsCount={columnsCount}
+            isEditable={isEditable}
+            buttonHandler={buttonHandler}
           />
         );
       })}
